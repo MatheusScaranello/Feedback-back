@@ -1,6 +1,6 @@
-CREATE DATABASE FEEDBACK;
+CREATE DATABASE feedback;
 
-CREATE TABLE Usuario (
+CREATE TABLE usuario (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     local VARCHAR(255) NOT NULL,
@@ -10,4 +10,4 @@ CREATE TABLE Usuario (
 );
 
 --Incert exemplo
-INSERT INTO Usuario (nome, local, nota, observacao, data) VALUES ('Fulano', 'São Paulo', 5, 'Muito bom', '2021-01-01');
+INSERT INTO usuario (nome, local, nota, observacao, data) VALUES ('Fulano', 'São Paulo', 5, 'Muito bom', '2021-01-01');
