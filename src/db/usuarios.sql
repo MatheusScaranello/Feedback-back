@@ -2,8 +2,9 @@ CREATE DATABASE FEEDBACK;
 
 CREATE TABLE Usuario (
     id SERIAL PRIMARY KEY,
-    local VARCHAR(255),
-    nota INT,
+    nome VARCHAR(255) NOT NULL,
+    local VARCHAR(255) NOT NULL,
+    nota INT NOT NULL,
     observacao TEXT,
-    data DATE
+    data DATE NOT NULL
 );
