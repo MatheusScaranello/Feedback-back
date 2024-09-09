@@ -21,10 +21,10 @@ async function getUsuarioByLocal(req, res) {
 }
 
 async function createUsuario(req, res) {
-    const {  local, nota, observacao, data } = req.body;
+    const { local, nota, observacao, data } = req.body;
     try {
         const result = await pool.query(
-            "INSERT INTO usuario (local, nota, observacao, data) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+            "INSERT INTO usuario (local, nota, observacao, data) VALUES ($1, $2, $3, $4) RETURNING *",
             [local, nota, observacao, data]
         );
         res.status(201).json(result.rows);
