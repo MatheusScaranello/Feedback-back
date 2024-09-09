@@ -2,7 +2,6 @@ CREATE DATABASE feedback;
 
 CREATE TABLE usuario (
     id SERIAL PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL,
     local VARCHAR(255) NOT NULL,
     nota INT NOT NULL,
     observacao TEXT,
@@ -10,4 +9,4 @@ CREATE TABLE usuario (
 );
 
 --Incert exemplo
-INSERT INTO usuario (nome, local, nota, observacao, data) VALUES ('Fulano', 'São Paulo', 5, 'Muito bom', '2021-01-01');
+INSERT INTO usuario (local, nota, observacao, data) VALUES ('São Paulo', 5, 'Muito bom', '2021-01-01');

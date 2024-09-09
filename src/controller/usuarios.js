@@ -21,11 +21,11 @@ async function getUsuarioById(req, res) {
     }
 
 async function createUsuario(req, res) {
-    const { nome, local, nota, observacao, data } = req.body;
+    const {  local, nota, observacao, data } = req.body;
     try {
         const result = await pool.query(
-            "INSERT INTO usuario (nome, local, nota, observacao, data) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-            [nome, local, nota, observacao, data]
+            "INSERT INTO usuario (local, nota, observacao, data) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+            [local, nota, observacao, data]
         );
         res.status(201).json(result.rows);
     } catch (error) {
@@ -35,11 +35,11 @@ async function createUsuario(req, res) {
 
 async function updateUsuario(req, res) {
     const id = req.params.id;
-    const { nome, local, nota, observacao, data } = req.body;
+    const {  local, nota, observacao, data } = req.body;
     try {
         const result = await pool.query(
-            "UPDATE usuario SET nome = $1, local = $2, nota = $3, observacao = $4, data = $5 WHERE id = $6 RETURNING *",
-            [nome, local, nota, observacao, data, id]
+            "UPDATE usuario SET = $1, local = $2, nota = $3, observacao = $4, data = $5 WHERE id = $6 RETURNING *",
+            [ local, nota, observacao, data, id]
         );
         res.status(200).json(result.rows);
     } catch (error) {
