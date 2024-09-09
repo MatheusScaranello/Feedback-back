@@ -8,3 +8,6 @@ CREATE TABLE Usuario (
     observacao TEXT,
     data DATE NOT NULL
 );
+
+--Incert exemplo
+INSERT INTO Usuario (nome, local, nota, observacao, data) VALUES ('Fulano', 'São Paulo', 5, 'Muito bom', '2021-01-01');
