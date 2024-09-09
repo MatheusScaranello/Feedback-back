@@ -15,4 +15,4 @@ Este repositório contém o backend do sistema de avaliação de atendimento, de
 ## Instalação
 1. **Clone o repositório:**
    ```bash
-   git clone [https://es.wiktionary.org/wiki/removido](https://es.wiktionary.org/wiki/removido)
+   git clone
