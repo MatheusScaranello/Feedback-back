@@ -9,7 +9,7 @@ const UsuariosRoutes = require("./routes/usuarios");
 const app = express();
 
 const port = process.env.PORT || 4000;
-app.use(cors({ origin: 'http://localhost:8081' }));
+app.use(cors());
 // Middleware para processar corpos de requisição no formato JSON
 app.use(express.json());
 

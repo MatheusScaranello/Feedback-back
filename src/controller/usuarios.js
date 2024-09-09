@@ -10,15 +10,15 @@ async function getUsuarios(req, res) {
   }
 }
 
-async function getUsuarioById(req, res) {
-    const id = req.params.id;
+async function getUsuarioByLocal(req, res) {
+    const local = req.params.local;
     try {
-        const result = await pool.query("SELECT * FROM usuario WHERE id = $1", [id]);
+        const result = await pool.query("SELECT * FROM usuario WHERE local = $1", [local]);
         res.status(200).json(result.rows);
     } catch (error) {
         res.status(500).json({ error: error.message });
-    }
-    }
+    }    
+}
 
 async function createUsuario(req, res) {
     const {  local, nota, observacao, data } = req.body;
@@ -59,7 +59,7 @@ async function deleteUsuario(req, res) {
 
 module.exports = {
   getUsuarios,
-  getUsuarioById,
+  getUsuarioByLocal,
   createUsuario,
   updateUsuario,
   deleteUsuario,

@@ -4,7 +4,7 @@ const usuariosController = require('../controller/usuarios');
 
 router.get('/usuario', usuariosController.getUsuarios);
 
-router.get('/usuario/:id', usuariosController.getUsuarioById);
+router.get('/usuario/:local', usuariosController.getUsuarioByLocal);
 
 router.post('/usuario', usuariosController.createUsuario);
 
