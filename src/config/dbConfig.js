@@ -1,16 +1,16 @@
-const { Pool } = require("pg");
-const dotenv = require("dotenv");
+// db.js
+require('dotenv').config();
+const { Pool } = require('pg');
 
-// Carrega as variáveis de ambiente do arquivo .env
-dotenv.config();
-
-// Configuração da pool de conexões com o PostgreSQL
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
+  database: process.env.DB_DATABASE,
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 module.exports = pool;
