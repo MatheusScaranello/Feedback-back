@@ -18,7 +18,7 @@ app.use("/", UsuariosRoutes);
 
 // Rota para a raiz do servidor
 app.get("/", (req, res) => {
-  res.json({ message: "API de exercícios funcionando!" });
+  res.json({ message: "API funcionando!" });
 }
 );
 
