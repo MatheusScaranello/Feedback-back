@@ -23,12 +23,9 @@ async function getVideo(req, res) {
 
 // Função para editar o vídeo
 async function editVideo(req, res) {
-  const { videoId, url } = req.body;
+  const { idVideo, url } = req.body;
 
   // Validação básica de entrada
-  if (!videoId || !url) {
-    return res.status(400).json({ error: "O 'videoId' e 'url' são obrigatórios." });
-  }
 
   // Validação da URL para garantir que seja um link do YouTube
   const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})(?=[^\w-]|$)/;
@@ -39,8 +36,8 @@ async function editVideo(req, res) {
   try {
     // Executa a consulta SQL para atualizar a URL do vídeo com base no 'videoId'
     const result = await pool.query(
-      "UPDATE video SET url = $1 WHERE idVideo = $2 RETURNING *", // Agora retornamos o vídeo atualizado
-      [url, videoId]
+      "UPDATE video SET url = $1, idVideo = $2 RETURNING *", // Agora retornamos o vídeo atualizado
+      [url, idVideo]
     );
 
     // Verifica se o vídeo foi encontrado e atualizado

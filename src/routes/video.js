@@ -9,6 +9,6 @@ const videoController = require('../controller/video.js');
 router.get('/video', videoController.getVideo);
 
 // Define uma rota GET para obter vídeos pelo ID, utilizando um parâmetro dinâmico
-router.get('/video', videoController.editVideo);
+router.put('/video', videoController.editVideo);
 
 module.exports = router;

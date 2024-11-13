@@ -39,3 +39,8 @@ CREATE TABLE video (
 
 --adicione esse video https://youtu.be/xjtNp-RStOs?si=t3e4rohtXZIlDSCP
 INSERT INTO video (url, idVideo) VALUES ('https://youtu.be/xjtNp-RStOs?si=t3e4rohtXZIlDSCP', 'xjtNp-RStOs');
+
+UPDATE video 
+SET url = 'https://youtu.be/xjtNp-RStOs?si=t3e4rohtXZIlDSCP', 
+    idVideo = 'xjtNp-RStOs' 
+WHERE id = 1;
