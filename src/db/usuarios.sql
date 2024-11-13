@@ -30,3 +30,12 @@
 -- $$ LANGUAGE plpgsql;
 
 -- SELECT gerar_usuarios_aleatorios(100);
+
+CREATE TABLE video (
+    id SERIAL PRIMARY KEY,
+    url VARCHAR(255) NOT NULL,
+    idVideo VARCHAR(255) NOT NULL
+);
+
+--adicione esse video https://youtu.be/xjtNp-RStOs?si=t3e4rohtXZIlDSCP
+INSERT INTO video (url, idVideo) VALUES ('https://youtu.be/xjtNp-RStOs?si=t3e4rohtXZIlDSCP', 'xjtNp-RStOs');

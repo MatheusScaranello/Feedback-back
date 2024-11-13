@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require('cors');
 // Importação dos arquivos de rota para exercícios, grupos musculares e usuários
 const UsuariosRoutes = require("./routes/usuarios");
+const videoRoutes = require("./routes/video");
 
 // Criação de uma instância do aplicativo Express
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // Roteamento para os endpoints relacionados a usuários
 app.use("/", UsuariosRoutes);
+app.use("/", videoRoutes);
 
 // Rota para a raiz do servidor
 app.get("/", (req, res) => {
